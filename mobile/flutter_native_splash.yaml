@@ -1,0 +1,6 @@
+flutter_native_splash:
+  color: "#09543D"
+  image: assets/icon/rufble_icon.png
+  android_12:
+    color: "#09543D"
+    image: assets/icon/rufble_icon.png
