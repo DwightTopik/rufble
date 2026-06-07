@@ -1,0 +1,160 @@
+# =============================================================================
+# AI ASSISTANT FILES
+# =============================================================================
+CLAUDE.md
+.claude/
+.cursor/
+.cursorignore
+.cursorindexingignore
+
+# =============================================================================
+# FLUTTER / DART
+# =============================================================================
+*.dart_tool/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+
+# Generated files (*.g.dart is intentionally NOT ignored — commit generated code)
+*.freezed.dart
+*.mocks.dart
+*.gen.dart
+
+# iOS — not active yet
+# mobile/ios/Pods/
+# mobile/ios/.symlinks/
+# mobile/ios/Flutter/Flutter.framework
+# mobile/ios/Flutter/Flutter.podspec
+# mobile/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+# mobile/ios/Runner/GeneratedPluginRegistrant.*
+# iOS code signing — provisioning profiles (App Store / TestFlight)
+# *.mobileprovision
+
+# Android
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/key.properties
+mobile/android/app/google-services.json
+*.jks
+*.keystore
+mobile/android/captures/
+mobile/android/.idea/
+
+# Licensed font — not for redistribution
+mobile/assets/fonts/AppleColorEmoji.ttc
+
+# =============================================================================
+# PYTHON / FASTAPI
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.env.local
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+dist/
+*.egg-info/
+*.egg
+.eggs/
+wheels/
+*.whl
+MANIFEST
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# mypy / pyright / ruff
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.ruff_cache/
+
+# =============================================================================
+# ENVIRONMENT & SECRETS
+# =============================================================================
+*.env
+*.env.*
+!*.env.example
+.envrc
+secrets/
+*.pem
+*.p8
+*.key
+*.cert
+*.p12
+google-services.json
+GoogleService-Info.plist
+
+# =============================================================================
+# IDE / EDITORS
+# =============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains (Android Studio, IntelliJ, PyCharm)
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Xcode
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+
+# =============================================================================
+# OS
+# =============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =============================================================================
+# DOCKER
+# =============================================================================
+docker-compose.override.yml
+docker-compose.local.yml
+
+# =============================================================================
+# MISC
+# =============================================================================
+*.log
+*.bak
+*.swp
+*.tmp
+*.orig
+.cache/
