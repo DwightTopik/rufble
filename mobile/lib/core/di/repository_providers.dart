@@ -2,6 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rufble/core/di/database_providers.dart';
 import 'package:rufble/features/deposit/data/drift_transactions_repository.dart';
 import 'package:rufble/features/deposit/domain/transactions_repository.dart';
+import 'package:rufble/features/goal_detail/data/drift_goal_links_repository.dart';
+import 'package:rufble/features/goal_detail/domain/goal_links_repository.dart';
 import 'package:rufble/features/goals/data/drift_goals_repository.dart';
 import 'package:rufble/features/goals/data/drift_tags_repository.dart';
 import 'package:rufble/features/goals/domain/goals_repository.dart';
@@ -24,6 +26,10 @@ final transactionsRepositoryProvider = Provider<TransactionsRepository>(
 
 final tagsRepositoryProvider = Provider<TagsRepository>(
   (ref) => DriftTagsRepository(ref.watch(appDatabaseProvider)),
+);
+
+final goalLinksRepositoryProvider = Provider<GoalLinksRepository>(
+  (ref) => DriftGoalLinksRepository(ref.watch(appDatabaseProvider)),
 );
 
 final settingsRepositoryProvider = Provider<SettingsRepository>(

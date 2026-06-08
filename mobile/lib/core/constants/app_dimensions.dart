@@ -35,4 +35,23 @@ abstract final class AppDimensions {
 
   // Hit area
   static const double minTapTarget = 44;
+
+  // Goal card
+  static const double cardImageHeight = 140;
+  static const double cardEmojiSize = 44;
+  static const double cardSpacing = 16;
+  static const double progressBarHeight = 8;
+  static const double chipHeight = 32;
+  static const double presetButtonHeight = 40;
+
+  // Modal sheets
+  static const double sheetMaxHeightFactor = 0.92;
+  static const double sheetHandleWidth = 36;
+  static const double sheetHandleHeight = 5;
+  static const double emojiPickerHeight = 320;
+
+  // Emoji / swatch picker
+  static const double emojiButtonSize = 64;
+  static const double colorSwatchSize = 36;
+  static const double photoPreviewHeight = 160;
 }

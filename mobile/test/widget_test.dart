@@ -7,6 +7,10 @@ void main() {
     await tester.pumpWidget(
       const ProviderScope(child: AppWidget(skipSplashDelay: true)),
     );
-    await tester.pumpAndSettle();
+    // The goals screen shows a CupertinoActivityIndicator while the Drift
+    // stream loads; it animates continuously, so pumpAndSettle never settles.
+    // Pump a few fixed frames instead to let the first build complete.
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
   });
 }

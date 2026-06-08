@@ -54,6 +54,46 @@ class DriftTransactionsRepository implements TransactionsRepository {
       await recalcSaved(_db, row.goalId);
     });
   }
+
+  @override
+  Future<void> transfer({
+    required String outId,
+    required String inId,
+    required String fromGoalId,
+    required String toGoalId,
+    required int amount,
+    String? note,
+  }) {
+    return _db.transaction(() async {
+      final now = DateTime.now();
+      final out = TransactionEntry(
+        id: outId,
+        goalId: fromGoalId,
+        type: TransactionType.transferOut,
+        amount: amount,
+        counterpartGoalId: toGoalId,
+        note: note,
+        createdAt: now,
+        updatedAt: now,
+      );
+      final inbound = TransactionEntry(
+        id: inId,
+        goalId: toGoalId,
+        type: TransactionType.transferIn,
+        amount: amount,
+        counterpartGoalId: fromGoalId,
+        note: note,
+        createdAt: now,
+        updatedAt: now,
+      );
+      await _db.into(_db.transactions).insertOnConflictUpdate(out.toCompanion());
+      await _db
+          .into(_db.transactions)
+          .insertOnConflictUpdate(inbound.toCompanion());
+      await recalcSaved(_db, fromGoalId);
+      await recalcSaved(_db, toGoalId);
+    });
+  }
 }
 
 /// Recomputes `goals.saved` for [goalId] from the sum of its non-deleted
